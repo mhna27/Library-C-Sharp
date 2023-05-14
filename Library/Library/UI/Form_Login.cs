@@ -21,5 +21,17 @@ namespace Library.UI
         {
             Application.Exit();
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            Form_Main form_Main = new Form_Main();
+            form_Main.ShowDialog();
+            this.Close();
+        }
+
+        private void Form_Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

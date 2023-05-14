@@ -47,7 +47,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(210, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 28);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "خوش آمدید";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(148, 287);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(258, 22);
+            this.label2.Size = new System.Drawing.Size(218, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "توسعه داده شده توسط M.H.Naji";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +71,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(394, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 24);
+            this.label3.Size = new System.Drawing.Size(87, 19);
             this.label3.TabIndex = 2;
             this.label3.Text = "نام کاربری :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,7 +82,7 @@
             this.cmb_User.FormattingEnabled = true;
             this.cmb_User.Location = new System.Drawing.Point(213, 131);
             this.cmb_User.Name = "cmb_User";
-            this.cmb_User.Size = new System.Drawing.Size(173, 32);
+            this.cmb_User.Size = new System.Drawing.Size(173, 27);
             this.cmb_User.TabIndex = 3;
             // 
             // label4
@@ -92,7 +92,7 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(395, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 24);
+            this.label4.Size = new System.Drawing.Size(86, 19);
             this.label4.TabIndex = 4;
             this.label4.Text = "کلمه عبور :";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +103,7 @@
             this.txt_Password.Location = new System.Drawing.Point(213, 184);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '*';
-            this.txt_Password.Size = new System.Drawing.Size(173, 32);
+            this.txt_Password.Size = new System.Drawing.Size(173, 27);
             this.txt_Password.TabIndex = 5;
             // 
             // btn_Login
@@ -115,6 +115,7 @@
             this.btn_Login.TabIndex = 6;
             this.btn_Login.Text = "ورود";
             this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // btn_Close
             // 
@@ -134,14 +135,14 @@
             this.lbl_Version.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Version.Location = new System.Drawing.Point(212, 61);
             this.lbl_Version.Name = "lbl_Version";
-            this.lbl_Version.Size = new System.Drawing.Size(115, 24);
+            this.lbl_Version.Size = new System.Drawing.Size(94, 19);
             this.lbl_Version.TabIndex = 8;
             this.lbl_Version.Text = "نگارش 1.0.0";
             this.lbl_Version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -162,6 +163,7 @@
             this.Name = "Form_Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

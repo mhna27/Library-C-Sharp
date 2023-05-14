@@ -16,5 +16,20 @@ namespace Library.UI
         {
             InitializeComponent();
         }
+
+        private void pnl_Right_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_New_Member_Click(object sender, EventArgs e)
+        {
+            Form_New_Member frm_New = new Form_New_Member();
+            frm_New.TopLevel = false;
+            pnl_Main.Controls.Add(frm_New);
+            frm_New.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm_New.Dock = DockStyle.Fill;
+            frm_New.Show();
+        }
     }
 }
