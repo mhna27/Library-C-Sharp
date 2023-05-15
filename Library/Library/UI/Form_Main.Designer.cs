@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.pnl_Right = new System.Windows.Forms.Panel();
+            this.btn_Backup = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.btn_User_Management = new System.Windows.Forms.Button();
             this.btn_Book_Management = new System.Windows.Forms.Button();
             this.btn_Member_Management = new System.Windows.Forms.Button();
             this.btn_Borrow_Return = new System.Windows.Forms.Button();
             this.btn_New_Member = new System.Windows.Forms.Button();
             this.pnl_Main = new System.Windows.Forms.Panel();
-            this.btn_Home = new System.Windows.Forms.Button();
-            this.btn_Backup = new System.Windows.Forms.Button();
             this.pnl_Right.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Right
             // 
             this.pnl_Right.Controls.Add(this.btn_Backup);
-            this.pnl_Right.Controls.Add(this.btn_Home);
             this.pnl_Right.Controls.Add(this.btn_User_Management);
             this.pnl_Right.Controls.Add(this.btn_Book_Management);
             this.pnl_Right.Controls.Add(this.btn_Member_Management);
             this.pnl_Right.Controls.Add(this.btn_Borrow_Return);
             this.pnl_Right.Controls.Add(this.btn_New_Member);
+            this.pnl_Right.Controls.Add(this.btn_Home);
             this.pnl_Right.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_Right.Location = new System.Drawing.Point(765, 0);
             this.pnl_Right.Name = "pnl_Right";
@@ -56,10 +56,33 @@
             this.pnl_Right.TabIndex = 0;
             this.pnl_Right.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Right_Paint);
             // 
+            // btn_Backup
+            // 
+            this.btn_Backup.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Backup.Location = new System.Drawing.Point(0, 330);
+            this.btn_Backup.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
+            this.btn_Backup.Name = "btn_Backup";
+            this.btn_Backup.Size = new System.Drawing.Size(222, 55);
+            this.btn_Backup.TabIndex = 8;
+            this.btn_Backup.Text = "پشتیبان گیری";
+            this.btn_Backup.UseVisualStyleBackColor = true;
+            // 
+            // btn_Home
+            // 
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.btn_Home.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Padding = new System.Windows.Forms.Padding(10);
+            this.btn_Home.Size = new System.Drawing.Size(222, 55);
+            this.btn_Home.TabIndex = 7;
+            this.btn_Home.Text = "صفحه اصلی";
+            this.btn_Home.UseVisualStyleBackColor = true;
+            // 
             // btn_User_Management
             // 
             this.btn_User_Management.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_User_Management.Location = new System.Drawing.Point(0, 220);
+            this.btn_User_Management.Location = new System.Drawing.Point(0, 275);
             this.btn_User_Management.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
             this.btn_User_Management.Name = "btn_User_Management";
             this.btn_User_Management.Size = new System.Drawing.Size(222, 55);
@@ -70,7 +93,7 @@
             // btn_Book_Management
             // 
             this.btn_Book_Management.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Book_Management.Location = new System.Drawing.Point(0, 165);
+            this.btn_Book_Management.Location = new System.Drawing.Point(0, 220);
             this.btn_Book_Management.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
             this.btn_Book_Management.Name = "btn_Book_Management";
             this.btn_Book_Management.Size = new System.Drawing.Size(222, 55);
@@ -81,7 +104,7 @@
             // btn_Member_Management
             // 
             this.btn_Member_Management.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Member_Management.Location = new System.Drawing.Point(0, 110);
+            this.btn_Member_Management.Location = new System.Drawing.Point(0, 165);
             this.btn_Member_Management.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
             this.btn_Member_Management.Name = "btn_Member_Management";
             this.btn_Member_Management.Size = new System.Drawing.Size(222, 55);
@@ -92,7 +115,7 @@
             // btn_Borrow_Return
             // 
             this.btn_Borrow_Return.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Borrow_Return.Location = new System.Drawing.Point(0, 55);
+            this.btn_Borrow_Return.Location = new System.Drawing.Point(0, 110);
             this.btn_Borrow_Return.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
             this.btn_Borrow_Return.Name = "btn_Borrow_Return";
             this.btn_Borrow_Return.Size = new System.Drawing.Size(222, 55);
@@ -103,7 +126,7 @@
             // btn_New_Member
             // 
             this.btn_New_Member.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_New_Member.Location = new System.Drawing.Point(0, 0);
+            this.btn_New_Member.Location = new System.Drawing.Point(0, 55);
             this.btn_New_Member.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
             this.btn_New_Member.Name = "btn_New_Member";
             this.btn_New_Member.Size = new System.Drawing.Size(222, 55);
@@ -119,28 +142,6 @@
             this.pnl_Main.Name = "pnl_Main";
             this.pnl_Main.Size = new System.Drawing.Size(765, 610);
             this.pnl_Main.TabIndex = 1;
-            // 
-            // btn_Home
-            // 
-            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Home.Location = new System.Drawing.Point(0, 275);
-            this.btn_Home.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(222, 55);
-            this.btn_Home.TabIndex = 7;
-            this.btn_Home.Text = "صفحه اصلی";
-            this.btn_Home.UseVisualStyleBackColor = true;
-            // 
-            // btn_Backup
-            // 
-            this.btn_Backup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Backup.Location = new System.Drawing.Point(0, 330);
-            this.btn_Backup.Margin = new System.Windows.Forms.Padding(20, 50, 20, 3);
-            this.btn_Backup.Name = "btn_Backup";
-            this.btn_Backup.Size = new System.Drawing.Size(222, 55);
-            this.btn_Backup.TabIndex = 8;
-            this.btn_Backup.Text = "پشتیبان گیری";
-            this.btn_Backup.UseVisualStyleBackColor = true;
             // 
             // Form_Main
             // 

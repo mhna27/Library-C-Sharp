@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,6 @@ namespace BLL
         public void Insert()
         {
             SqlParameter[] parameters = new SqlParameter[param_Count];
-
             parameters[0] = new SqlParameter("@Edit", 0);
             parameters[1] = new SqlParameter("@Person_ID", Person_ID);
             parameters[2] = new SqlParameter("@F_Name", F_Name);
@@ -53,10 +53,44 @@ namespace BLL
             parameters[12] = new SqlParameter("@User_Name", User_Name);
             parameters[13] = new SqlParameter("@Password", Password);
             parameters[14] = new SqlParameter("@Deleted", Deleted);
-
             base.Connect();
             base.Exec_Store_Procedre("SP_Insert_Edit_User", parameters);
             base.Disconnect();
+        }
+        public void Update()
+        {
+            SqlParameter[] parameters = new SqlParameter[param_Count];
+            parameters[0] = new SqlParameter("@Edit", 1);
+            parameters[1] = new SqlParameter("@Person_ID", Person_ID);
+            parameters[2] = new SqlParameter("@F_Name", F_Name);
+            parameters[3] = new SqlParameter("@L_Name", L_Name);
+            parameters[4] = new SqlParameter("@Gender", Gender);
+            parameters[5] = new SqlParameter("@National_Number", National_Number);
+            parameters[6] = new SqlParameter("@Phone_Number1", Phone_Number1);
+            parameters[7] = new SqlParameter("@Phone_Number2", Phone_Number2);
+            parameters[8] = new SqlParameter("@Birthdate", Birthdate);
+            parameters[9] = new SqlParameter("@Date_Time_Insert", Date_Time_Insert);
+            parameters[10] = new SqlParameter("@Solar_Date_Time_Insert", Solar_Date_Time_Insert);
+            parameters[11] = new SqlParameter("@User_Type_ID", User_Type_ID);
+            parameters[12] = new SqlParameter("@User_Name", User_Name);
+            parameters[13] = new SqlParameter("@Password", Password);
+            parameters[14] = new SqlParameter("@Deleted", Deleted);
+            base.Connect();
+            base.Exec_Store_Procedre("SP_Insert_Edit_User", parameters);
+            base.Disconnect();
+        }
+        public DataSet Select(string field_Names, string condtion = "")
+        {
+            condtion = condtion.Trim();
+            if (condtion != "" && condtion.Substring(0,5).ToLower() != "where")
+            {
+                condtion = "WHERE " + condtion;
+            }
+            base.Connect();
+            DataSet ds = base.Select_Data(string.Format("SELECT {0} FROM dbo.tbl_Person INNER JOIN dbo.tbl_User ON tbl_User.Person_ID = tbl_Person.ID {1}",
+             field_Names, condtion));
+            base.Disconnect();
+            return ds;
         }
     }
 }

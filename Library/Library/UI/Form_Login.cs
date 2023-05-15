@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace Library.UI
 {
@@ -31,7 +32,13 @@ namespace Library.UI
 
         private void Form_Login_Load(object sender, EventArgs e)
         {
+            User user = new User();
+            cmb_User.DataBindings.Clear();
+            //cmb_User.DataBindings.Add("Text", user.Select("User_Name", "WHERE IsNull(Deleted,0)=0"), "User_Name");
 
+            cmb_User.DataSource = user.Select("tbl_User.ID,User_Name", "WHERE IsNull(Deleted,0)=0");
+            cmb_User.DisplayMember = "User_Name";
+            cmb_User.ValueMember = "ID";
         }
     }
 }
