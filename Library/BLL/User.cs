@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using BLL.Common_Class;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,8 +21,7 @@ namespace BLL
         public string Phone_Number2 { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime Birthdate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime Date_Time_Insert { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Solar_Date_Time_Insert { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        
 
 
         [Required]
@@ -34,7 +34,7 @@ namespace BLL
         public string Password { get; set; }
         public bool Deleted { get; set; } = false;
 
-        int param_Count = 15;
+        int param_Count = 14;
         public void Insert()
         {
             SqlParameter[] parameters = new SqlParameter[param_Count];
@@ -48,11 +48,10 @@ namespace BLL
             parameters[7] = new SqlParameter("@Phone_Number2", Phone_Number2);
             parameters[8] = new SqlParameter("@Birthdate", Birthdate);
             parameters[9] = new SqlParameter("@Date_Time_Insert", Date_Time_Insert);
-            parameters[10] = new SqlParameter("@Solar_Date_Time_Insert", Solar_Date_Time_Insert);
-            parameters[11] = new SqlParameter("@User_Type_ID", User_Type_ID);
-            parameters[12] = new SqlParameter("@User_Name", User_Name);
-            parameters[13] = new SqlParameter("@Password", Password);
-            parameters[14] = new SqlParameter("@Deleted", Deleted);
+            parameters[10] = new SqlParameter("@User_Type_ID", User_Type_ID);
+            parameters[11] = new SqlParameter("@User_Name", User_Name);
+            parameters[12] = new SqlParameter("@Password", Password);
+            parameters[13] = new SqlParameter("@Deleted", Deleted);
             base.Connect();
             base.Exec_Store_Procedre("SP_Insert_Edit_User", parameters);
             base.Disconnect();
@@ -70,27 +69,22 @@ namespace BLL
             parameters[7] = new SqlParameter("@Phone_Number2", Phone_Number2);
             parameters[8] = new SqlParameter("@Birthdate", Birthdate);
             parameters[9] = new SqlParameter("@Date_Time_Insert", Date_Time_Insert);
-            parameters[10] = new SqlParameter("@Solar_Date_Time_Insert", Solar_Date_Time_Insert);
-            parameters[11] = new SqlParameter("@User_Type_ID", User_Type_ID);
-            parameters[12] = new SqlParameter("@User_Name", User_Name);
-            parameters[13] = new SqlParameter("@Password", Password);
-            parameters[14] = new SqlParameter("@Deleted", Deleted);
+            parameters[10] = new SqlParameter("@User_Type_ID", User_Type_ID);
+            parameters[11] = new SqlParameter("@User_Name", User_Name);
+            parameters[12] = new SqlParameter("@Password", Password);
+            parameters[13] = new SqlParameter("@Deleted", Deleted);
             base.Connect();
             base.Exec_Store_Procedre("SP_Insert_Edit_User", parameters);
             base.Disconnect();
         }
-        public DataSet Select(string field_Names, string condtion = "")
+        public DataTable Select(string field_Names, string condtion = "")
         {
-            condtion = condtion.Trim();
-            if (condtion != "" && condtion.Substring(0,5).ToLower() != "where")
-            {
-                condtion = "WHERE " + condtion;
-            }
+            condtion = Common_Methods.Check_Query_Condition(condtion);
             base.Connect();
-            DataSet ds = base.Select_Data(string.Format("SELECT {0} FROM dbo.tbl_Person INNER JOIN dbo.tbl_User ON tbl_User.Person_ID = tbl_Person.ID {1}",
+            DataTable dt = base.Select_Data(string.Format("SELECT {0} FROM dbo.tbl_Person INNER JOIN dbo.tbl_User ON tbl_User.Person_ID = tbl_Person.ID {1}",
              field_Names, condtion));
             base.Disconnect();
-            return ds;
+            return dt;
         }
     }
 }

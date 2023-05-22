@@ -48,6 +48,9 @@
             this.txt_Phone_Number2 = new System.Windows.Forms.TextBox();
             this.txt_Membership_Fee = new System.Windows.Forms.TextBox();
             this.cmb_Gender = new System.Windows.Forms.ComboBox();
+            this.date_Birthdate = new Atf.UI.DateTimeSelector();
+            this.date_Start_Membership = new Atf.UI.DateTimeSelector();
+            this.date_End_Membership = new Atf.UI.DateTimeSelector();
             this.SuspendLayout();
             // 
             // label1
@@ -98,7 +101,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(595, 294);
+            this.label6.Location = new System.Drawing.Point(595, 289);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 20);
             this.label6.TabIndex = 5;
@@ -157,12 +160,14 @@
             this.btn_Save.TabIndex = 11;
             this.btn_Save.Text = "ذخیره";
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // txt_Code
             // 
             this.txt_Code.Enabled = false;
             this.txt_Code.Location = new System.Drawing.Point(468, 38);
             this.txt_Code.Name = "txt_Code";
+            this.txt_Code.ReadOnly = true;
             this.txt_Code.Size = new System.Drawing.Size(121, 26);
             this.txt_Code.TabIndex = 12;
             // 
@@ -220,17 +225,45 @@
             // 
             // cmb_Gender
             // 
+            this.cmb_Gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Gender.FormattingEnabled = true;
             this.cmb_Gender.Location = new System.Drawing.Point(468, 134);
             this.cmb_Gender.Name = "cmb_Gender";
             this.cmb_Gender.Size = new System.Drawing.Size(121, 28);
             this.cmb_Gender.TabIndex = 20;
             // 
+            // date_Birthdate
+            // 
+            this.date_Birthdate.Location = new System.Drawing.Point(468, 285);
+            this.date_Birthdate.Name = "date_Birthdate";
+            this.date_Birthdate.Size = new System.Drawing.Size(121, 27);
+            this.date_Birthdate.TabIndex = 21;
+            this.date_Birthdate.UsePersianFormat = true;
+            // 
+            // date_Start_Membership
+            // 
+            this.date_Start_Membership.Location = new System.Drawing.Point(94, 186);
+            this.date_Start_Membership.Name = "date_Start_Membership";
+            this.date_Start_Membership.Size = new System.Drawing.Size(121, 27);
+            this.date_Start_Membership.TabIndex = 22;
+            this.date_Start_Membership.UsePersianFormat = true;
+            // 
+            // date_End_Membership
+            // 
+            this.date_End_Membership.Location = new System.Drawing.Point(94, 236);
+            this.date_End_Membership.Name = "date_End_Membership";
+            this.date_End_Membership.Size = new System.Drawing.Size(121, 27);
+            this.date_End_Membership.TabIndex = 23;
+            this.date_End_Membership.UsePersianFormat = true;
+            // 
             // Form_New_Member
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 372);
+            this.Controls.Add(this.date_End_Membership);
+            this.Controls.Add(this.date_Start_Membership);
+            this.Controls.Add(this.date_Birthdate);
             this.Controls.Add(this.cmb_Gender);
             this.Controls.Add(this.txt_Membership_Fee);
             this.Controls.Add(this.txt_Phone_Number2);
@@ -284,5 +317,8 @@
         private System.Windows.Forms.TextBox txt_Phone_Number2;
         private System.Windows.Forms.TextBox txt_Membership_Fee;
         private System.Windows.Forms.ComboBox cmb_Gender;
+        private Atf.UI.DateTimeSelector date_Birthdate;
+        private Atf.UI.DateTimeSelector date_Start_Membership;
+        private Atf.UI.DateTimeSelector date_End_Membership;
     }
 }

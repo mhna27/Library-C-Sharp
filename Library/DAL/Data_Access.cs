@@ -14,13 +14,13 @@ namespace DAL
         SqlConnection sql_conn;
         SqlCommand cmd;
         SqlDataAdapter adapter;
-        DataSet dataset;
+        DataTable dataTable;
         public Data_Access()
         {
             sql_conn = new SqlConnection();
             cmd = new SqlCommand();
             adapter = new SqlDataAdapter();
-            dataset = new DataSet();
+            dataTable = new DataTable();
             cmd.Connection = sql_conn;
 
         }
@@ -39,15 +39,15 @@ namespace DAL
                 sql_conn.Close();
             }
         }
-        public DataSet Select_Data(string query)
+        public DataTable Select_Data(string query)
         {
             if (sql_conn != null)
             {
                 cmd.CommandText = query;
                 adapter.SelectCommand = cmd;
-                dataset.Clear();
-                adapter.Fill(dataset);
-                return dataset;
+                dataTable.Clear();
+                adapter.Fill(dataTable);
+                return dataTable;
             }
             return null;
         }

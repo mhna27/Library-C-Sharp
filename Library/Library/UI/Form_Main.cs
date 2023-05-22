@@ -31,5 +31,25 @@ namespace Library.UI
             frm_New.Dock = DockStyle.Fill;
             frm_New.Show();
         }
+
+        private void Form_Main_Load(object sender, EventArgs e)
+        {
+            Form_Login frm_Login = new Form_Login();
+            if (frm_Login.ShowDialog() != DialogResult.OK)
+            {
+                this.Close();
+                this.Dispose();
+            }
+            frm_Login.Close();
+            frm_Login.Dispose();
+        }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in pnl_Main.Controls.OfType<Form>())
+            {
+                f.Dispose();
+            }
+        }
     }
 }

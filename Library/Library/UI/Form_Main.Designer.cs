@@ -30,12 +30,12 @@
         {
             this.pnl_Right = new System.Windows.Forms.Panel();
             this.btn_Backup = new System.Windows.Forms.Button();
-            this.btn_Home = new System.Windows.Forms.Button();
             this.btn_User_Management = new System.Windows.Forms.Button();
             this.btn_Book_Management = new System.Windows.Forms.Button();
             this.btn_Member_Management = new System.Windows.Forms.Button();
             this.btn_Borrow_Return = new System.Windows.Forms.Button();
             this.btn_New_Member = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.pnl_Main = new System.Windows.Forms.Panel();
             this.pnl_Right.SuspendLayout();
             this.SuspendLayout();
@@ -66,18 +66,6 @@
             this.btn_Backup.TabIndex = 8;
             this.btn_Backup.Text = "پشتیبان گیری";
             this.btn_Backup.UseVisualStyleBackColor = true;
-            // 
-            // btn_Home
-            // 
-            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Home.Location = new System.Drawing.Point(0, 0);
-            this.btn_Home.Margin = new System.Windows.Forms.Padding(10);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Padding = new System.Windows.Forms.Padding(10);
-            this.btn_Home.Size = new System.Drawing.Size(222, 55);
-            this.btn_Home.TabIndex = 7;
-            this.btn_Home.Text = "صفحه اصلی";
-            this.btn_Home.UseVisualStyleBackColor = true;
             // 
             // btn_User_Management
             // 
@@ -135,6 +123,19 @@
             this.btn_New_Member.UseVisualStyleBackColor = true;
             this.btn_New_Member.Click += new System.EventHandler(this.btn_New_Member_Click);
             // 
+            // btn_Home
+            // 
+            this.btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.btn_Home.Margin = new System.Windows.Forms.Padding(10);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Padding = new System.Windows.Forms.Padding(10);
+            this.btn_Home.Size = new System.Drawing.Size(222, 55);
+            this.btn_Home.TabIndex = 7;
+            this.btn_Home.Text = "صفحه اصلی";
+            this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            // 
             // pnl_Main
             // 
             this.pnl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -156,6 +157,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نرم افزار مدیریت کتابخانه";
+            this.Load += new System.EventHandler(this.Form_Main_Load);
             this.pnl_Right.ResumeLayout(false);
             this.ResumeLayout(false);
 

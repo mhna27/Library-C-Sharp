@@ -27,8 +27,5 @@ namespace BLL
         DateTime Birthdate { get; set; }
         [Required]
         DateTime Date_Time_Insert { get; set; }
-        [Required]
-        string Solar_Date_Time_Insert { get; set; }
-
     }
 }

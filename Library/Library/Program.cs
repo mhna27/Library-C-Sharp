@@ -17,7 +17,8 @@ namespace Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Login());
+            Cultures.InitializePersianCulture();
+            Application.Run(new Form_Main());
         }
     }
 }

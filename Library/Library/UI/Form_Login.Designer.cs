@@ -78,6 +78,7 @@
             // 
             // cmb_User
             // 
+            this.cmb_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_User.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_User.FormattingEnabled = true;
             this.cmb_User.Location = new System.Drawing.Point(213, 131);
