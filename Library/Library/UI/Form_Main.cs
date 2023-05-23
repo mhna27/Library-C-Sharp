@@ -24,12 +24,7 @@ namespace Library.UI
 
         private void btn_New_Member_Click(object sender, EventArgs e)
         {
-            Form_New_Member frm_New = new Form_New_Member();
-            frm_New.TopLevel = false;
-            pnl_Main.Controls.Add(frm_New);
-            frm_New.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            frm_New.Dock = DockStyle.Fill;
-            frm_New.Show();
+            Add_From_To_Panel(new Form_New_Member());
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
@@ -50,6 +45,26 @@ namespace Library.UI
             {
                 f.Dispose();
             }
+        }
+
+        private void Add_From_To_Panel(Form form)
+        {
+            btn_Home_Click(null, null);
+            form.TopLevel = false;
+            pnl_Main.Controls.Add(form);
+            form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
+
+        private void btn_Borrow_Return_Click(object sender, EventArgs e)
+        {
+            Add_From_To_Panel(new Form_Search_Member(Search_Display_Type.Borrow_Return));
+        }
+
+        private void btn_Member_Management_Click(object sender, EventArgs e)
+        {
+            Add_From_To_Panel(new Form_Search_Member(Search_Display_Type.Member_Management));
         }
     }
 }

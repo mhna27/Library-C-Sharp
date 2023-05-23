@@ -99,6 +99,7 @@
             this.btn_Member_Management.TabIndex = 2;
             this.btn_Member_Management.Text = "مدیریت اعضا";
             this.btn_Member_Management.UseVisualStyleBackColor = true;
+            this.btn_Member_Management.Click += new System.EventHandler(this.btn_Member_Management_Click);
             // 
             // btn_Borrow_Return
             // 
@@ -110,6 +111,7 @@
             this.btn_Borrow_Return.TabIndex = 1;
             this.btn_Borrow_Return.Text = "امانت و برگشت";
             this.btn_Borrow_Return.UseVisualStyleBackColor = true;
+            this.btn_Borrow_Return.Click += new System.EventHandler(this.btn_Borrow_Return_Click);
             // 
             // btn_New_Member
             // 

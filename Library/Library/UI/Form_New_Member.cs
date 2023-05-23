@@ -122,7 +122,7 @@ namespace Library.UI
         private void Clear_Items()
         {
             Member member = new Member();
-            DataTable dt = member.Select("MAX(tbl_Member.ID) AS max_ID");
+            DataTable dt = member.Select("MAX(tbl_Member.ID)+1 AS max_ID");
             txt_Code.Text = dt.Rows[0]["max_ID"].ToString() == "" ? "1"
                 : dt.Rows[0]["max_ID"].ToString();
 
